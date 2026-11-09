@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login Toko Buku UT">
+  <title>Login | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page" data-page="login">
+  <main class="login-card">
+    <section class="login-hero" aria-label="Tentang Toko Buku UT">
+      <div>
+        <p class="brand"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</p>
+      </div>
+      <div>
+        <h1>Pesan buku ajar, lebih mudah.</h1>
+        <p style="margin-top:.6rem">Cek stok, buat pesanan, dan lacak pengiriman dalam satu aplikasi.</p>
+      </div>
+      <div class="hero-books" aria-hidden="true">
+        <img src="img/pengantar_komunikasi.jpg" alt=""><img src="img/manajemen_keuangan.jpg" alt=""><img src="img/kepemimpinan.jpg" alt=""><img src="img/mikrobiologi.jpg" alt=""><img src="img/paud_perkembangan.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="login-form" aria-labelledby="ttlLogin">
+      <h2 id="ttlLogin">Masuk</h2>
+      <p class="page-sub">Silakan login untuk melanjutkan.</p>
+      <form id="formLogin" novalidate>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="username" placeholder="nama@email.com"><span class="error-msg"></span></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password"><span class="error-msg"></span></div>
+        <p class="alert-err" id="loginError" role="alert" hidden>Email/password yang anda masukkan salah.</p>
+        <button type="submit" class="btn btn-block">Login</button>
+      </form>
+      <div class="login-links">
+        <button type="button" class="btn-link" data-open="dlgLupa">Lupa Password</button>
+        <button type="button" class="btn-link" data-open="dlgDaftar">Daftar</button>
+      </div>
+      <p class="demo-hint">Akun demo: <code>rina@gmail.com</code> / <code>rina123</code> (User) · <code>siti@gmail.com</code> / <code>siti123</code> (Admin)</p>
+    </section>
+  </main>
+
+  <dialog id="dlgLupa" aria-labelledby="ttlLupa">
+    <div class="modal-head"><h2 id="ttlLupa">Lupa Password</h2><button type="button" class="modal-close" data-close="dlgLupa" aria-label="Tutup">&times;</button></div>
+    <form id="formLupa" class="modal-body" novalidate>
+      <p class="page-sub">Masukkan email terdaftar untuk menerima tautan reset.</p>
+      <div id="lupaMsg" role="status"></div>
+      <div class="field"><label for="lupaEmail">Email</label><input id="lupaEmail" type="email"><span class="error-msg"></span></div>
+      <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close="dlgLupa">Batal</button><button type="submit" class="btn">Kirim</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="dlgDaftar" aria-labelledby="ttlDaftar">
+    <div class="modal-head"><h2 id="ttlDaftar">Daftar Akun</h2><button type="button" class="modal-close" data-close="dlgDaftar" aria-label="Tutup">&times;</button></div>
+    <form id="formDaftar" class="modal-body" novalidate>
+      <div class="field"><label for="regNama">Nama Lengkap</label><input id="regNama" autocomplete="name"><span class="error-msg"></span></div>
+      <div class="field"><label for="regEmail">Email</label><input id="regEmail" type="email"><span class="error-msg"></span></div>
+      <div class="field"><label for="regPass">Password</label><input id="regPass" type="password" autocomplete="new-password"><span class="error-msg"></span></div>
+      <div class="field"><label for="regPass2">Konfirmasi Password</label><input id="regPass2" type="password" autocomplete="new-password"><span class="error-msg"></span></div>
+      <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close="dlgDaftar">Batal</button><button type="submit" class="btn">Daftar</button></div>
+    </form>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

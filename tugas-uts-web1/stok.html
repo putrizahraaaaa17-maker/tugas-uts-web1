@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informasi stok dan katalog buku">
+  <title>Informasi Stok | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="stok.html" aria-current="page">Katalog</a></li><li><a href="checkout.html">Pemesanan</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="laporan.html">Laporan</a></li><li><a href="history.html">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Informasi Stok / Katalog</h1>
+    <p class="page-sub">Data dimuat dinamis dari variabel <code>dataKatalogBuku</code>.</p>
+
+    <div class="toolbar">
+      <label for="cari" class="sr" style="position:absolute;left:-9999px">Cari buku</label>
+      <input type="search" id="cari" placeholder="Cari nama atau kode buku…">
+      <button type="button" class="btn" data-open="dlgStok">+ Tambah Stok Baru</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption style="position:absolute;left:-9999px">Daftar stok buku</caption>
+        <thead>
+          <tr><th scope="col" class="num">No</th><th scope="col">Cover</th><th scope="col">Kode</th><th scope="col">Nama Barang</th><th scope="col">Jenis</th><th scope="col">Edisi</th><th scope="col" class="num">Stok</th><th scope="col" class="num">Harga</th><th scope="col">Aksi</th></tr>
+        </thead>
+        <tbody id="bodyStok"></tbody>
+      </table>
+    </div>
+    <p class="hint" id="infoStok"></p>
+  </main>
+
+  <dialog id="dlgStok" aria-labelledby="ttlStok">
+    <div class="modal-head"><h2 id="ttlStok">Tambah Stok Baru</h2><button type="button" class="modal-close" data-close="dlgStok" aria-label="Tutup">&times;</button></div>
+    <form id="formStok" class="modal-body" novalidate>
+      <div class="field"><label for="fKode">Kode Barang</label><input id="fKode" placeholder="EKMA4100"><span class="error-msg"></span></div>
+      <div class="field"><label for="fNama">Nama Buku</label><input id="fNama" placeholder="Judul buku"><span class="error-msg"></span></div>
+      <div class="form-grid">
+        <div class="field"><label for="fJenis">Jenis</label><select id="fJenis"><option>Buku Ajar</option><option>Modul</option><option>Bahan Ajar Cetak</option></select><span class="error-msg"></span></div>
+        <div class="field"><label for="fEdisi">Edisi</label><input id="fEdisi" type="number" min="1" value="1"><span class="error-msg"></span></div>
+        <div class="field"><label for="fStok">Stok</label><input id="fStok" type="number" min="0"><span class="error-msg"></span></div>
+        <div class="field"><label for="fHarga">Harga (Rp)</label><input id="fHarga" type="number" min="1" placeholder="150000"><span class="error-msg"></span></div>
+      </div>
+      <div class="field" style="margin-top:1rem"><label for="fCover">Cover</label><select id="fCover"><option value="">Tanpa cover</option></select><span class="error-msg"></span></div>
+      <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close="dlgStok">Batal</button><button type="submit" class="btn">Simpan</button></div>
+    </form>
+  </dialog>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

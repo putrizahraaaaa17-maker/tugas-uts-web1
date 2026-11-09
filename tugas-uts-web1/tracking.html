@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lacak status pengiriman buku">
+  <title>Tracking Pengiriman | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="stok.html">Katalog</a></li><li><a href="checkout.html">Pemesanan</a></li><li><a href="tracking.html" aria-current="page">Tracking</a></li><li><a href="laporan.html">Laporan</a></li><li><a href="history.html">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Tracking Pengiriman</h1>
+    <p class="page-sub">Masukkan Nomor Delivery Order untuk melihat status paket.</p>
+
+    <section class="card" aria-labelledby="ttlCari">
+      <h2 id="ttlCari" class="sr" style="position:absolute;left:-9999px">Cari pengiriman</h2>
+      <form id="formTracking" novalidate>
+        <div class="field" style="margin-bottom:0">
+          <label for="nomorDO">Nomor Delivery Order</label>
+          <div class="search-row">
+            <input id="nomorDO" inputmode="numeric" placeholder="contoh: 20230012">
+            <button type="submit" class="btn">Cari</button>
+          </div>
+          <span class="error-msg"></span>
+        </div>
+      </form>
+      <p class="hint">Coba nomor contoh:
+        <button type="button" class="btn-link" data-contoh="20230012">20230012</button> ·
+        <button type="button" class="btn-link" data-contoh="20230013">20230013</button></p>
+    </section>
+
+    <section id="hasil" style="margin-top:1.5rem" aria-live="polite"></section>
+  </main>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Riwayat transaksi pemesanan">
+  <title>History Transaksi | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="history">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="stok.html">Katalog</a></li><li><a href="checkout.html">Pemesanan</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="laporan.html">Laporan</a></li><li><a href="history.html" aria-current="page">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">History Transaksi</h1>
+    <p class="page-sub">Riwayat pesanan yang pernah dibuat.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">No. DO</th><th scope="col">Tanggal</th><th scope="col">Ringkasan</th><th scope="col" class="num">Total</th><th scope="col">Status</th><th scope="col">Aksi</th></tr></thead>
+        <tbody id="bodyHistory"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <dialog id="dlgDetail" aria-labelledby="ttlDetail">
+    <div class="modal-head"><h2 id="ttlDetail">Detail Transaksi</h2><button type="button" class="modal-close" data-close="dlgDetail" aria-label="Tutup">&times;</button></div>
+    <div class="modal-body"><div id="detailIsi"></div><div class="modal-actions"><button type="button" class="btn" data-close="dlgDetail">Tutup</button></div></div>
+  </dialog>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

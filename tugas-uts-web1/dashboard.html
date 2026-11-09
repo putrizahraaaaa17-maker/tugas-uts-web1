@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard menu utama Toko Buku UT">
+  <title>Dashboard | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* CSS internal: aksen khusus halaman dashboard */
+    .menu-card:nth-child(even) { border-bottom-color: var(--navy-2); }
+    .hero-greet h1 { letter-spacing: .01em; }
+  </style>
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html" aria-current="page">Dashboard</a></li><li><a href="stok.html">Katalog</a></li><li><a href="checkout.html">Pemesanan</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="laporan.html">Laporan</a></li><li><a href="history.html">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero-greet" aria-labelledby="greeting">
+      <div>
+        <h1 id="greeting">Selamat datang!</h1>
+        <p id="dateText"></p>
+        <p>Kelola stok, pesanan, dan pengiriman buku dalam satu tempat.</p>
+      </div>
+      <div class="clock" id="clock" aria-hidden="true">00:00:00<small>Waktu lokal Anda</small></div>
+    </section>
+
+    <section class="stats" aria-label="Ringkasan">
+      <div class="stat"><b id="statJudul">0</b><span>Judul buku di katalog</span></div>
+      <div class="stat"><b id="statStok">0</b><span>Total eksemplar tersedia</span></div>
+      <div class="stat"><b id="statPesanan">0</b><span>Pesanan Anda</span></div>
+      <div class="stat"><b id="statBelanja">Rp 0</b><span>Total belanja</span></div>
+    </section>
+
+    <section aria-labelledby="menu-title">
+      <h2 id="menu-title" style="margin-bottom:1rem">Menu Utama</h2>
+      <div class="menu-grid">
+        <a class="menu-card" href="stok.html"><span class="ico" aria-hidden="true">📚</span><h2>Informasi Stok / Katalog</h2><p>Lihat dan tambah stok buku ajar.</p></a>
+        <a class="menu-card" href="tracking.html"><span class="ico" aria-hidden="true">🚚</span><h2>Tracking Pengiriman</h2><p>Lacak paket dengan nomor Delivery Order.</p></a>
+        <a class="menu-card" href="laporan.html"><span class="ico" aria-hidden="true">📊</span><h2>Laporan Pemesanan</h2><p>Rekap pemesanan per judul buku.</p></a>
+        <a class="menu-card" href="history.html"><span class="ico" aria-hidden="true">🧾</span><h2>History Transaksi</h2><p>Riwayat semua transaksi Anda.</p></a>
+        <a class="menu-card" href="checkout.html" style="background:var(--amber)"><span class="ico" aria-hidden="true">🛒</span><h2>Buat Pesanan Baru</h2><p style="color:var(--navy)">Pesan buku sekarang.</p></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

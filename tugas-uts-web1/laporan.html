@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laporan pemesanan buku">
+  <title>Laporan Pemesanan | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="laporan">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="stok.html">Katalog</a></li><li><a href="checkout.html">Pemesanan</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="laporan.html" aria-current="page">Laporan</a></li><li><a href="history.html">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Laporan Pemesanan</h1>
+    <p class="page-sub">Cakupan data: <strong id="lapLingkup"></strong></p>
+    <section class="stats" aria-label="Ringkasan laporan">
+      <div class="stat"><b id="lapPesanan">0</b><span>Jumlah pesanan</span></div>
+      <div class="stat"><b id="lapItem">0</b><span>Total buku dipesan</span></div>
+      <div class="stat"><b id="lapNilai">Rp 0</b><span>Nilai pemesanan</span></div>
+    </section>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Judul Buku</th><th scope="col" class="num">Jumlah</th><th scope="col" class="num">Nilai</th><th scope="col">Proporsi</th></tr></thead>
+        <tbody id="bodyLaporan"></tbody>
+      </table>
+    </div>
+  </main>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

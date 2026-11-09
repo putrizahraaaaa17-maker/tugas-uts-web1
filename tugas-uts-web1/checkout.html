@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Halaman pemesanan buku">
+  <title>Pemesanan | Toko Buku UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="dashboard.html"><span class="logo" aria-hidden="true">B</span> Toko Buku UT</a>
+      <nav class="main-nav" aria-label="Navigasi utama"><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="stok.html">Katalog</a></li><li><a href="checkout.html" aria-current="page">Pemesanan</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="laporan.html">Laporan</a></li><li><a href="history.html">History</a></li></ul></nav>
+      <div class="user-box">
+        <span id="userName">Pengguna</span>
+        <button type="button" id="btnLogout" class="btn btn-sm btn-ghost" style="color:#fff;border-color:#3b4a73">Keluar</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Pemesanan Buku</h1>
+    <p class="page-sub">Tambahkan buku, ubah jumlahnya, lalu lengkapi data pemesan dan pembayaran.</p>
+
+    <div class="grid-2">
+      <section class="card" aria-labelledby="ttlItem">
+        <h2 id="ttlItem" style="margin-bottom:1rem">Daftar Pesanan</h2>
+        <form id="formItem" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="selBuku">Buku</label><select id="selBuku"><option value="">— Pilih buku —</option></select><span class="error-msg"></span></div>
+            <div class="field"><label for="qty">Jumlah</label><input id="qty" type="number" min="1" value="1"><span class="error-msg"></span></div>
+          </div>
+          <button type="submit" class="btn btn-dark" style="margin:1rem 0">+ Tambah ke Pesanan</button>
+        </form>
+        <div class="table-wrap" style="box-shadow:none;border:1px solid var(--line)">
+          <table>
+            <thead><tr><th scope="col">Buku</th><th scope="col" class="num">Harga</th><th scope="col">Jumlah</th><th scope="col" class="num">Subtotal</th><th scope="col">Aksi</th></tr></thead>
+            <tbody id="bodyPesanan"></tbody>
+          </table>
+        </div>
+        <p class="error-msg" id="errCart" role="alert"></p>
+        <div class="total-box"><span>Total Bayar</span><strong id="totalBayar">Rp 0</strong></div>
+      </section>
+
+      <section class="card" aria-labelledby="ttlPemesan">
+        <h2 id="ttlPemesan" style="margin-bottom:1rem">Data Pemesan &amp; Pembayaran</h2>
+        <form id="formPemesan" novalidate>
+          <fieldset>
+            <legend>Informasi Pemesan</legend>
+            <div class="field"><label for="pNama">Nama Lengkap</label><input id="pNama" autocomplete="name"><span class="error-msg"></span></div>
+            <div class="field"><label for="pEmail">Email</label><input id="pEmail" type="email" autocomplete="email"><span class="error-msg"></span></div>
+            <div class="field"><label for="pTelp">No. HP</label><input id="pTelp" type="tel" placeholder="081234567890" autocomplete="tel"><span class="error-msg"></span></div>
+            <div class="field"><label for="pAlamat">Alamat Pengiriman</label><textarea id="pAlamat" rows="3"></textarea><span class="error-msg"></span></div>
+            <div class="field"><label for="pEkspedisi">Ekspedisi</label><select id="pEkspedisi"><option value="">— Pilih —</option><option>JNE</option><option>Pos Indonesia</option><option>J&amp;T Express</option></select><span class="error-msg"></span></div>
+          </fieldset>
+          <fieldset>
+            <legend>Metode Pembayaran</legend>
+            <div class="radio-row">
+              <label><input type="radio" name="bayar" value="Transfer Bank"> Transfer Bank</label>
+              <label><input type="radio" name="bayar" value="E-Wallet"> E-Wallet</label>
+              <label><input type="radio" name="bayar" value="COD"> COD</label>
+            </div>
+            <p class="error-msg" id="errBayar" role="alert"></p>
+          </fieldset>
+          <button type="submit" class="btn btn-block">Buat Pesanan</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="dlgSukses" aria-labelledby="ttlSukses">
+    <div class="modal-head"><h2 id="ttlSukses">Pesanan Berhasil 🎉</h2><button type="button" class="modal-close" data-close="dlgSukses" aria-label="Tutup">&times;</button></div>
+    <div class="modal-body">
+      <p class="alert-ok">Terima kasih! Pesanan Anda sudah tercatat.</p>
+      <dl class="detail-list" style="grid-template-columns:1fr">
+        <div><dt>Nomor Delivery Order</dt><dd id="sukDO"></dd></div>
+        <div><dt>Total</dt><dd id="sukTotal"></dd></div>
+        <div><dt>Pembayaran</dt><dd id="sukBayar"></dd></div>
+      </dl>
+      <div class="modal-actions"><a class="btn btn-ghost" href="history.html">History</a><a class="btn" id="linkLacak" href="tracking.html">Lacak Pesanan</a></div>
+    </div>
+  </dialog>
+  <footer class="site-footer"><p>&copy; 2025 Toko Buku UT — Tugas UTS Pemrograman Web</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
